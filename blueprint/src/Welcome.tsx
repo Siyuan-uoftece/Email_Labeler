@@ -1,39 +1,37 @@
-import React, {useState} from "react";
-import {NumericInput} from "@blueprintjs/core";
-import Header from "./Header"
+import React, { useState, useLayoutEffect } from "react";
+import { NumericInput } from "@blueprintjs/core";
+import Tutorial from "./Tutorial";
+import Header from "./Header";
+import StickyHeader from "./StickyHeader";
+import WhyItMatters from "./WhyItMatters";
+import Wave from "./wave.png"
 
-function Welcome({numEmails, setNumEmails}: 
-  {numEmails: number, setNumEmails: (num: number) => void}) {
-  
+function Welcome({
+  numEmails,
+  setNumEmails,
+}: {
+  numEmails: number;
+  setNumEmails: (num: number) => void;
+}) {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <>
-      <div className="welcome">
-        <p className="welcome-text">WELCOME!</p>
-        <div className="survey-Block">
-          <div className="survey-Text">
-            <p>I want to label&nbsp;</p>
-            <NumericInput
-              leftIcon="envelope"
-              size={2}
-              defaultValue={1}
-              value={numEmails}
-              onValueChange={(val: number) => {
-                Number.isFinite(val) &&
-                  val >= 0 &&
-                  val <= 10 &&
-                  setNumEmails(val);
-              }}
-              large={true}
-              intent="warning"
-              max={10}
-              min={1}
-            />
-            <p>&nbsp;emails today.&nbsp;</p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+    
+    <div className="welcome">
+      <Header />
+      <StickyHeader />
+      <p className="welcome-text">WELCOME!</p>
+      <img className="welcome-wave" src={Wave} alt="waving emoji"/>
+      <p className="welcome-sub-block">
+        This is the space where you could help improve 
+        the accuracy of our <u>Machine Learning model</u> to identify potential <u>Data Leak</u>.
+      </p>
+      <Tutorial />
+      <WhyItMatters />
+    </div>
+  )
 }
 
 export default Welcome;

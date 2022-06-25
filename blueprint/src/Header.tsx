@@ -1,10 +1,16 @@
 import React from "react";
-import sunlifeLogo from "./sunlifeLogo.svg";
+import sunlifeLogo from "./sunlife3.jpg";
 
 function Header() {
   return (
-    <div className="welcome-header">
-        <img src={sunlifeLogo} className="sunlife-logo" alt="Sunlife Logo" />
+    <div>
+      {/* <div className="solid-header" /> */}
+      <div className="sunlife-header">
+          <img src={sunlifeLogo} className="sunlife-logo" alt="Sunlife Logo" />
+          <button className="sunlife-header-quick-start">
+            QUICK START --&gt;
+          </button>
+      </div>
     </div>
   );
 }

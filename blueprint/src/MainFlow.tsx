@@ -2,6 +2,7 @@ import React from "react"
 import {useState} from "react"
 import Welcome from "./Welcome"
 import Label from "./Label"
+import StickyHeader from "./StickyHeader"
 import { Button,NumericInput } from "@blueprintjs/core";
 
 
@@ -13,13 +14,19 @@ function MainFlow() {
         setPage2(true);
     }
 
+
     if (!page2) {
     return(
         <>
             <Welcome numEmails={numEmails} setNumEmails={setNumEmails}/>
-            <div className="welcome-button">
-                <Button className="welcome-button" icon="confirm" text="START" onClick={toLabel}/>
-            </div>
+            {/* <div className="welcome-button">
+                <Button 
+                    className="start-button" 
+                    icon="confirm" 
+                    text="START" 
+                    onClick={toLabel}
+                />
+            </div> */}
             
         </>
     )}

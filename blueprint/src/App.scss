@@ -3,39 +3,146 @@
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 @import "~@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 
-$sunlife-yellow:  rgb(236, 171, 35);
-$sunlife-dark: rgb(14, 56, 70);
+//brighter yellow: rgb(253, 192, 60);
 
-.welcome-header {
-  position:sticky;
-  background-color: rgb(256, 240, 210);
-  height: 100px;
+$sunlife-yellow:  rgb(253, 192, 60);
+$sunlife-dark: rgb(14, 56, 70);
+$yellow-white: rgb(252, 242, 177);
+$sunlife-header-yellow: rgb(255, 190, 35);
+$web-dark: rgb(10, 44, 55);
+
+
+.solid-header {
+  height: 7px;
+  background-color:black;
+}
+
+.sunlife-header {
+  background-color: $sunlife-yellow;
+  height: 65px;
+  width: 100vw;
   display: flex;
-  font-size: 30px;
+}
+
+.sunlife-logo {
+  transform: translateX(30px);
+  height: 65px;
+}
+
+.sunlife-header-quick-start {
+  transform: translateX(60vw) translateY(11px);
+  background-color: $yellow-white;
+  border: solid 1px $sunlife-yellow;
+  width: 150px;
+  height: 45px;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 12px;
+  font-style: italic;
 }
 
 .welcome {
-  font-family: "Verdana";
-  color: rgb(14, 56, 70);
-  text-align: center;
-}
-
-.welcome-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transform: translateY(10px);
-  cursor:pointer;
+  font-family: Verdana;
+  background-color: $sunlife-yellow;
 }
 
 .welcome-text {
   font-size: 80px;
-  height: 670px;
+  height: 370px;
+  font-weight: bold; 
+  color: black;
+  transform: translateY(100px) translateX(30px);
+}
+
+.welcome-sub-block {
+  color: black;
+  font-size: 30px;
   font-weight: bold;
+  font-style: italic;
+  transform: translateX(-45px) translateY(-130px);
+  display:inline-block;
+  width: 600px;
+  height: 50px;
+}
+
+.welcome-wave {
+  transform: translateY(-33ç5px) translateX(540px);
+  border: 2px solid $sunlife-header-yellow;
+  border-radius: 40%;
+  max-width: 80px;
+  max-height: 80px;
+  background: linear-gradient(to right, rgba(230, 229, 220, 0.75) 0, rgba(0, 0, 0, 0) 75%);
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  height: 70px;
+  width: 100vw;
+  display: flex;
+  font-family: Verdana;
+  z-index: 10;
+
+  .sticky-name {
+    transform: translateX(30px) translateY(22px);
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+}
+
+.sticky-header-two {
+  position: sticky;
+  top: 0px;
+  background-color: black;
+  height: 70px;
+  width: 100vw;
+  display: flex;
+  font-family: Verdana;
+  z-index: 100;
+
+  .sticky-name {
+    transform: translateX(30px) translateY(24px);
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+  }
+}
+
+.welcome-login {
+  margin: 2px 2px;
+  padding: 90px;
+  color: #fefbf5;
+  border: 2px;
+  transform: translateX(50px);
+}
+
+
+.welcome-button {
+  background-color: #fefbf5;
+}
+.start-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  transform: translateX(430px) translateY(40px);
+  cursor:pointer;
+}
+
+.tutorial {
+  font-family: Verdana;
+  font-weight: bold;
+  background-color: black;
+  color:white;
+}
+
+.matters {
+  font-family: Verdana;
+  font-weight: bold;
+  background-color: $sunlife-yellow;
+  color:black;
 }
 
 .survey-Block {
@@ -47,11 +154,6 @@ $sunlife-dark: rgb(14, 56, 70);
 
 .survey-Text {
   display: flex;
-}
-
-.sunlife-logo {
-  transform: translateY(30px) translateX(30px);
-  height: 40px;
 }
 
 .email-grid {
@@ -77,5 +179,15 @@ $sunlife-dark: rgb(14, 56, 70);
     transform: translateY(-14px) ;
   }
 }
+
+
+.alert-box {
+  background-color: #fefbf5;
+  .alert-sub {
+    font-size: 15px;
+    transform: translateY(-8px)
+  }
+}
+
 
 

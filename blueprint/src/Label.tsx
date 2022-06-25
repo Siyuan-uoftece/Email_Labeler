@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import { AnchorButton, Button, FormGroup} from "@blueprintjs/core";
-import {Popover2} from "@blueprintjs/popover2";
+import React, {useState, useLayoutEffect} from "react";
+import { AnchorButton, Button, FormGroup, Alert} from "@blueprintjs/core";
 import emailData from "./emailData";
 
 
-function Label({
-  numEmails,
-  setPage2,
-}: {
+function Label({numEmails,setPage2,}:{
   numEmails: number;
   setPage2: (val: boolean) => void;
-}) {
+}) 
+{
+
   const [pop, setPop] = useState(false);
   const emails = [];
+
   for (let i = 0; i < numEmails; i++) {
     emails.push(emailData[i]);
   }
 
+  
   const mappingFunc = (email: any, index: number) => {
     const newEmail: any = {};
     newEmail["mid"] = email["mid"];
@@ -51,29 +51,44 @@ function Label({
       </div>
     );
   };
+
+  const handleExitCancel= () => {
+    setPop(!pop)
+  }
+
+  const handleExitConfirm= () => {
+    setPage2(false)
+  }
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <div>
-
-      <Popover2 
-        interactionKind="click"
-        placement="bottom"
+      <Button 
+        className="something"
+        icon="arrow-left"
+        intent="warning"
+        text={"Back"}
+        onClick={() => {
+          setPop(!pop);
+        }}
+      />
+      <Alert 
+        className="alert-box"
         isOpen={pop}
-        content={
-          <div>
-            <h3>Are you sure you want to exit?</h3>
-            <AnchorButton icon="delete" text="dismiss" onClick={() => setPage2(false)}/>
-          </div>
-        }>
-            <Button 
-              className="something"
-              icon="arrow-left"
-              intent="warning"
-              text={"Back"}
-              onClick={() => {
-                setPop(!pop);
-              }}
-            />
-        </Popover2>
+        confirmButtonText="Exit"
+        cancelButtonText="Cancel"
+        icon="undo"
+        intent="danger"
+        onCancel={handleExitCancel}
+        onConfirm={handleExitConfirm}
+      >
+        <h2>Are you sure you want to exit?</h2>
+        <p className="alert-sub">Your data will be lost.</p>
+      </Alert>
+
       <pre>
         <div className="email-grid">{emails.map(mappingFunc)}</div>
       </pre>
