@@ -4,7 +4,7 @@ function StickyHeader() {
     const [fixed, setFixed] = useState(false);
 
     function handleHeaderChange() {
-        if (window.scrollY >= 600) {
+        if (window.scrollY >= 625) {
             setFixed(true)
         } else {
             setFixed(false)
@@ -13,7 +13,7 @@ function StickyHeader() {
     window.addEventListener("scroll", handleHeaderChange)
 
     return(
-        <div className={fixed ? "sticky-header-two" : "sticky-header"}>
+        <div className={fixed ? "sticky-header" : "sticky-header-two"}>
           <p className="sticky-name">MailLabeler</p>
         </div>
     )

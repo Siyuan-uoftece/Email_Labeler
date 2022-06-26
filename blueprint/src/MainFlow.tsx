@@ -4,7 +4,8 @@ import Welcome from "./Welcome"
 import Label from "./Label"
 import StickyHeader from "./StickyHeader"
 import { Button,NumericInput } from "@blueprintjs/core";
-
+import Tutorial from "./Tutorial"
+import WhyItMatters from "./WhyItMatters"
 
 function MainFlow() {
     const [page2, setPage2] = useState(false);
@@ -14,19 +15,18 @@ function MainFlow() {
         setPage2(true);
     }
 
-
     if (!page2) {
     return(
         <>
             <Welcome numEmails={numEmails} setNumEmails={setNumEmails}/>
-            {/* <div className="welcome-button">
-                <Button 
+            <div className="welcome-button">
+                {/* <Button 
                     className="start-button" 
                     icon="confirm" 
                     text="START" 
                     onClick={toLabel}
-                />
-            </div> */}
+                /> */}
+            </div>
             
         </>
     )}
