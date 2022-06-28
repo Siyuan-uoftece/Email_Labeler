@@ -1,38 +1,58 @@
-import React from "react"
-import {useState} from "react"
+import React, {useState} from "react"
 import Welcome from "./Welcome"
 import Label from "./Label"
-import StickyHeader from "./StickyHeader"
-import { Button,NumericInput } from "@blueprintjs/core";
 import Tutorial from "./Tutorial"
 import WhyItMatters from "./WhyItMatters"
+import StartSurvey from "./StartSurvey"
 
-function MainFlow() {
-    const [page2, setPage2] = useState(false);
+export enum Page {
+    Welcome,
+    Survey,
+    LabelGeneral,
+}
+function MainFlow() 
+    {
+    //page1: welcome page
+    //page2: survey page
+    //page3: general email display page
+    const [page,setPage] = useState(Page.Welcome)
     const [numEmails, setNumEmails] = useState(1);
     
-    function toLabel() {
-        setPage2(true);
+    function handlePage2() {
+        setPage(Page.Survey);
     }
 
-    if (!page2) {
+    function handlePage3() {
+        setPage(Page.LabelGeneral);
+    }
+
+    if (page == Page.Welcome) {
     return(
         <>
-            <Welcome numEmails={numEmails} setNumEmails={setNumEmails}/>
-            <div className="welcome-button">
-                {/* <Button 
-                    className="start-button" 
-                    icon="confirm" 
-                    text="START" 
-                    onClick={toLabel}
-                /> */}
-            </div>
-            
+            <Welcome/>
+            <button 
+                className="sunlife-header-quick-start"
+                onClick={handlePage2}
+                >
+                QUICK START --&gt;
+            </button>
+            <Tutorial />
+            <WhyItMatters /> 
+            <button 
+                className="welcome-page-start"
+                onClick={handlePage2}>
+                START
+            </button>
         </>
     )}
+    else if (page==Page.Survey) {
+        return (
+            <StartSurvey numEmails={numEmails} setNumEmails={setNumEmails} page={page} setPage={setPage}/>
+        )
+    }
     else {
         return (
-            <Label numEmails={numEmails} setPage2={setPage2}/>
+            <Label numEmails={numEmails} page={page} setPage={setPage}/>
         )
     }
 }

@@ -10,6 +10,7 @@ function StickyHeader() {
             setFixed(false)
         }
     }
+    
     window.addEventListener("scroll", handleHeaderChange)
 
     return(

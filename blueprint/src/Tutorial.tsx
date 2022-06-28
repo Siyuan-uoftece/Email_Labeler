@@ -2,12 +2,12 @@ import React from "react"
 
 function Tutorial() {
     return(
-        <>  
-            <p className="welcome-connector-one"> How it works </p>
-            <div className="tutorial">
-                <p className="tutorial-header">HOW IT WORKS</p>
+        <div className="tutorial-whole">
+            <div className="tutorial-connector"> 
+                <p className="connector-one-text">Quick Tutorial</p>
             </div>
-        </>
+            <p className="tutorial-header">HOW IT WORKS</p>
+        </div>
     )
 }
 

@@ -1,21 +1,19 @@
 import React, {useState, useLayoutEffect} from "react";
 import { AnchorButton, Button, FormGroup, Alert} from "@blueprintjs/core";
 import emailData from "./emailData";
+import {Page} from "./MainFlow"
 
 
-function Label({numEmails,setPage2,}:{
-  numEmails: number;
-  setPage2: (val: boolean) => void;
-}) 
-{
-
+function Label({numEmails,page,setPage} :
+  {numEmails:number,
+  page: number,
+  setPage: (page: number) => void, }) {
   const [pop, setPop] = useState(false);
   const emails = [];
 
   for (let i = 0; i < numEmails; i++) {
     emails.push(emailData[i]);
   }
-
   
   const mappingFunc = (email: any, index: number) => {
     const newEmail: any = {};
@@ -52,13 +50,14 @@ function Label({numEmails,setPage2,}:{
     );
   };
 
-  const handleExitCancel= () => {
+  const handleExitCancel = () => {
     setPop(!pop)
   }
 
-  const handleExitConfirm= () => {
-    setPage2(false)
+  const handleExitConfirm = () => {
+    setPage(Page.Survey)
   }
+
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0)

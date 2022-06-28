@@ -4,7 +4,6 @@
 @import "~@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 
 //brighter yellow: rgb(253, 192, 60);
-
 $sunlife-yellow:  rgb(253, 192, 60);
 $sunlife-dark: rgb(14, 56, 70);
 $yellow-white: rgb(252, 242, 177);
@@ -33,15 +32,16 @@ $web-dark: rgb(10, 44, 55);
 }
 
 .sunlife-header-quick-start {
-  transform: translateX(83vw) translateY(10px);
+  transform: translateX(88vw) translateY(-704px);
   background-color: $yellow-white;
   border: solid 1px $sunlife-yellow;
   width: 150px;
-  height: 25px;
+  height: 30px;
   font-family: Verdana;
   font-weight: bold;
   font-size: 12px;
   font-style: italic;
+  z-index: 100;
 }
 
 .background1 {
@@ -53,7 +53,7 @@ $web-dark: rgb(10, 44, 55);
 .welcome {
   font-family: Verdana;
   background-image: url(https://wallpaperaccess.com/full/2454669.jpg);
-  max-height: 670px;
+  //max-height: 670px;
 }
 
 .welcome-text {
@@ -69,7 +69,7 @@ $web-dark: rgb(10, 44, 55);
   font-size: 30px;
   font-weight: bold;
   font-style: italic;
-  transform: translateX(-5px) translateY(-100px);
+  transform: translateX(70px) translateY(-100px);
   display:inline-block;
   width: 600px;
   height: 50px;
@@ -89,7 +89,7 @@ $web-dark: rgb(10, 44, 55);
 }
 
 .welcome-learn-ml {
-  transform: translateX(70px) translateY(-200px);
+  transform: translateX(170px) translateY(-200px);
   background-color: $yellow-white;
   border: solid 3px $sunlife-yellow;
   border-radius: 80px;
@@ -115,13 +115,6 @@ $web-dark: rgb(10, 44, 55);
   font-style: italic;
 }
 
-.welcome-connector-one {
-  background-color: $sunlife-header-yellow;
-  height: 250px;
-  width: 250px;
-  transform: translateY(-80px) translateX(70px)
-}
-
 .sticky-header {
   position: sticky;
   top: 0px;
@@ -130,7 +123,7 @@ $web-dark: rgb(10, 44, 55);
   width: 100vw;
   display: flex;
   font-family: Verdana;
-  z-index: 10;
+  z-index: 100;
   border-bottom: 1px solid grey;
 
   .sticky-name {
@@ -153,7 +146,7 @@ $web-dark: rgb(10, 44, 55);
   border-bottom: 1px solid white;
 
   .sticky-name {
-    transform: translateX(70px) translateY(24px);
+    transform: translateX(70px) translateY(22px);
     font-weight: bold;
     font-size: 22px;
     color: white;
@@ -168,24 +161,24 @@ $web-dark: rgb(10, 44, 55);
   transform: translateX(50px);
 }
 
-.welcome-button {
-  background-color: #fefbf5;
-}
-
-.start-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transform: translateX(430px) translateY(40px);
-  cursor:pointer;
-}
-
-.tutorial {
-  font-family: Verdana;
-  font-weight: bold;
+.tutorial-whole {
+  height: 900px;
   background-color: white;
-  color: black;
+}
+
+.tutorial-connector {
+  background-color: $sunlife-header-yellow;
+  height: 100px;
+  width: 100px;
+  text-align: left;
+  transform: translateY(-52px) translateX(70px)
+}
+
+.connector-one-text {
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: bold; 
+  transform: translateY(56px) translateX(10px)
 }
 
 .tutorial-header {
@@ -194,15 +187,17 @@ $web-dark: rgb(10, 44, 55);
   font-size: 80px;
   color: black;
   display: inline-block;
-  width: 300px;
-  height: 300px;
-  transform: translateX(70vw) translateY(-240px)
+  width: 100px;
+  height: 100px;
+  transform: translateX(75vw) translateY(-30px)
 }
+
 .matters {
   font-family: Verdana;
   font-weight: bold;
   background-color: $sunlife-yellow;
   color:black;
+  padding: 5em;
 }
 
 .survey-Block {
@@ -210,10 +205,20 @@ $web-dark: rgb(10, 44, 55);
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  
 }
 
 .survey-Text {
   display: flex;
+  transform: translateY(100px) 
+}
+
+.survey-start-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  transform: translateY(200px)
 }
 
 .email-grid {
@@ -240,7 +245,6 @@ $web-dark: rgb(10, 44, 55);
   }
 }
 
-
 .alert-box {
   background-color: #fefbf5;
   .alert-sub {
@@ -248,6 +252,25 @@ $web-dark: rgb(10, 44, 55);
     transform: translateY(-8px)
   }
 }
+
+.welcome-page-start {
+  display:flex;
+  justify-content: center;
+  background-color: $yellow-white;
+  color: black;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 40px;
+  // height: 70px;
+  width: 15%;
+  margin: 0 auto;
+  font-style: italic;
+  border: solid 2px $sunlife-header-yellow;
+
+  position: sticky;
+  bottom: 30px;
+}
+
 
 
 
