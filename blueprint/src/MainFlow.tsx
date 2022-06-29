@@ -22,13 +22,13 @@ function MainFlow()
         setPage(Page.Survey);
     }
 
-    function handlePage3() {
-        setPage(Page.LabelGeneral);
-    }
+    // function handlePage3() {
+    //     setPage(Page.LabelGeneral);
+    // }
 
     if (page == Page.Welcome) {
     return(
-        <>
+        <div>
             <Welcome/>
             <button 
                 className="sunlife-header-quick-start"
@@ -37,14 +37,9 @@ function MainFlow()
                 QUICK START --&gt;
             </button>
             <Tutorial />
-            <WhyItMatters /> 
-            <button 
-                className="welcome-page-start"
-                onClick={handlePage2}>
-                START
-            </button>
-        </>
-    )}
+            <WhyItMatters page={page} setPage={setPage} /> 
+        </div>
+    )} 
     else if (page==Page.Survey) {
         return (
             <StartSurvey numEmails={numEmails} setNumEmails={setNumEmails} page={page} setPage={setPage}/>

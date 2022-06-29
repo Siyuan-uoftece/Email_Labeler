@@ -5,7 +5,7 @@ import {Page} from "./MainFlow"
 
 
 function Label({numEmails,page,setPage} :
-  {numEmails:number,
+  {numEmails:number,   
   page: number,
   setPage: (page: number) => void, }) {
   const [pop, setPop] = useState(false);
@@ -14,7 +14,7 @@ function Label({numEmails,page,setPage} :
   for (let i = 0; i < numEmails; i++) {
     emails.push(emailData[i]);
   }
-  
+
   const mappingFunc = (email: any, index: number) => {
     const newEmail: any = {};
     newEmail["mid"] = email["mid"];
@@ -25,7 +25,7 @@ function Label({numEmails,page,setPage} :
 
     return (
       <div className="email-element">
-        <div className="email-box-header">
+        <div className="email-box-header"> 
           <p>{"Email " + (index + 1)}</p>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
           <FormGroup inline={true} style={{ position: "relative", top: -0.5 }}>
@@ -58,7 +58,9 @@ function Label({numEmails,page,setPage} :
     setPage(Page.Survey)
   }
 
+  // function handleIndividualEmail(index) {
 
+  // }
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   }, []);
@@ -84,7 +86,7 @@ function Label({numEmails,page,setPage} :
         onCancel={handleExitCancel}
         onConfirm={handleExitConfirm}
       >
-        <h2>Are you sure you want to exit?</h2>
+        <h2 className="alert-header">Are you sure you want to exit?</h2>
         <p className="alert-sub">Your data will be lost.</p>
       </Alert>
 
