@@ -1,5 +1,5 @@
 import React from "react";
-import sunlifeLogo from "./sunlife3.jpg";
+import sunlifeLogo from "./assets/sunlife3.jpg";
 
 function Logo() {
     return(
