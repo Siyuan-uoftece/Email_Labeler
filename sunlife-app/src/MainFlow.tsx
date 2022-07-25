@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Welcome from "./welcome_page/Welcome";
 import Label from "./label_page/Label";
+import LearnMore from "./welcome_page/LearnMore"
 import Tutorial from "./welcome_page/Tutorial";
 import WhyItMatters from "./welcome_page/WhyItMatters";
 import StartSurvey from "./selection_page/StartSurvey";
 import { Page } from "./common"
+import {Header} from "./common"
+import Navbar from "./welcome_page/Navbar"
 
 function MainFlow() {
   //page1: welcome page
@@ -36,13 +39,16 @@ function MainFlow() {
   if (page === Page.Welcome) {
     return (
       <div>
+        <Header />
+        <Navbar />
         <Welcome />
         <button className="sunlife-header-quick-start" onClick={handlePage2}>
           QUICK START --&gt;
         </button>
+        <LearnMore />
         <Tutorial />
         <WhyItMatters page={page} setPage={setPage} />
-        <input type="file" id="file-selector" multiple></input>
+        {/* <input type="file" id="file-selector" multiple></input> */}
       </div>
     );
   } else if (page === Page.Survey) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sunlifeLogo from "./assets/sunlife3.jpg";
+import Navbar from "./welcome_page/Navbar"
 
 export enum Page {
   Welcome,
@@ -34,7 +35,6 @@ export function Header() {
       <div className="sunlife-header">
           <img src={sunlifeLogo} className="sunlife-logo" alt="Sunlife Logo" />
       </div>
-      <StickyHeader />
     </div>
   );
 }
