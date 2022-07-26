@@ -3,11 +3,12 @@ import Welcome from "./welcome_page/Welcome";
 import Label from "./label_page/Label";
 import LearnMore from "./welcome_page/LearnMore"
 import Tutorial from "./welcome_page/Tutorial";
-import WhyItMatters from "./welcome_page/WhyItMatters";
+import QuickTutorial from "./welcome_page/QuickTutorial";
 import StartSurvey from "./selection_page/StartSurvey";
 import { Page } from "./common"
 import {Header} from "./common"
 import Navbar from "./welcome_page/Navbar"
+import VideoStep from "./welcome_page/VideoStep"
 
 function MainFlow() {
   //page1: welcome page
@@ -41,13 +42,12 @@ function MainFlow() {
       <div>
         <Header />
         <Navbar />
-        <Welcome />
-        <button className="sunlife-header-quick-start" onClick={handlePage2}>
-          QUICK START --&gt;
+        <Welcome page={page} setPage={setPage}/>
+        <button className="sunlife-header-quick-start">
+          Get to know more about our project --&gt;
         </button>
-        <LearnMore />
-        <Tutorial />
-        <WhyItMatters page={page} setPage={setPage} />
+        <QuickTutorial/>
+        <VideoStep />
         {/* <input type="file" id="file-selector" multiple></input> */}
       </div>
     );

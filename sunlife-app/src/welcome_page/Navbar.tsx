@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import { FaBars, FaTimes } from 'react-icons'
 import logo from '../assets/sun.jpg'
 import {Link} from 'react-scroll'
 import Logo from '../assets/logo.jpg'
@@ -9,7 +8,6 @@ const Navbar = () => {
 
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
-
     const closeMenu = () => setClick(false)
 
     return (
@@ -23,11 +21,15 @@ const Navbar = () => {
                         <Link to="welcome" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Home</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="tutorial" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Tutorial</Link>
+                        <Link to="tut" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Tutorial</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="whyitmatters" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Importance</Link>
+                        <Link to="tut" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Thinking</Link>
                     </li>
+                    <li className='nav-item'>
+                        <Link to="contactus" spy={true} smooth={true} offset={-130} duration={900} onClick={closeMenu}>Contact Us</Link>
+                    </li>
+                    <button className='nav-item'>Sign In</button>
                 </ul>
             </nav>
         </div>

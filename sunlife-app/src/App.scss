@@ -10,6 +10,18 @@ $yellow-white: rgb(252, 242, 177);
 $sunlife-header-yellow: rgb(255, 190, 35);
 $web-dark: rgb(10, 44, 55);
 
+//// #FFD400,
+    // #FFD400, #FF6200,  #FD7F2C,#FD9346,#FFFFB7,
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #FFEA61,
+    #FFF192,
+    #FDB777,
+    #FDA766
+  );
+}
 .mark {
   background-color: rgb(240, 240, 3);
 }
@@ -21,7 +33,6 @@ $web-dark: rgb(10, 44, 55);
   display: flex;
   position: sticky;
   top: 0;
-  z-index: 1000;
 }
 
 .sunlife-logo {
@@ -30,11 +41,13 @@ $web-dark: rgb(10, 44, 55);
 }
 
 .sunlife-header-quick-start {
-  transform: translateX(86vw) translateY(-947px);
+  transform: translateX(79.2vw) translateY(-798px);
+  z-index: 1000;
   background-color: $yellow-white;
-  border: solid 1px $sunlife-yellow;
-  width: 150px;
-  height: 30px;
+  border: 0.3px solid black;
+  border-radius: 10px;
+  width: 300px;
+  height: 22px;
   font-family: Verdana;
   font-weight: bold;
   font-size: 12px;
@@ -51,10 +64,12 @@ $web-dark: rgb(10, 44, 55);
   font-family: Verdana;
   background-image: url(https://wallpaperaccess.com/full/2454669.jpg);
   max-height: 700px;
+  margin: auto;
 }
 
 .welcome-text {
   font-size: 80px;
+  margin: auto;
   font-weight: bolder;
   height: 350px;
   color: rgb(253, 245, 90);
@@ -64,11 +79,12 @@ $web-dark: rgb(10, 44, 55);
 
 .welcome-sub-block {
   color: rgb(251, 246, 139);
-  font-size: 30px;
+  margin: auto;
+  font-size: 25px;
   font-weight: bold;
   font-style: italic;
   text-align: center;
-  transform: translateX(540px) translateY(-50px);
+  transform: translateX(540px) translateY(-40px);
   display: inline-block;
   width: 600px;
   height: 490px;
@@ -163,75 +179,62 @@ $web-dark: rgb(10, 44, 55);
   }
 }
 
-.nav-header {
-  color: white;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: bold;
-  translate: translateX(-3000px);
-}
-
-.nav-header a:hover {
-  text-decoration: none;
-}
-
 .header {
   position: sticky;
   height: 70px;
   width: 100%;
   top: 0;
-  left: 0;
+  // left: 0;
   z-index: 1;
   transition: .3s ease-in;
   overflow: hidden;
   background-color: rgb(0,0,0);
-}
-
-.header .nav-header {
-  color: white;
+  border-bottom: 0.2px solid $sunlife-yellow;
 }
 
 .header .navbar {
-  display: flex;
+  position: relative;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1240px;
-  margin: auto;
+  // margin: 10px;
   height: 100%;
-  padding: 0 65rem;
-  border-bottom: 0.01px solid $sunlife-header-yellow;
+  padding-left: 4rem;
+  padding-right: 3rem;
 }
-
 
 .header .nav-menu a {
   color: #ffffff;
-  font-size: 14px;
+}
+
+.header .navbar img {
+  width: 200px;
+  height: auto;
+  // translate: translateX(2000px);
+}
+
+.header .nav-menu {
+  display:flex;
+}
+
+.header .nav-item {
+  padding: 1.8rem;
   font-family: Verdana;
   font-weight: bold;
 }
 
-.header .navbar img {
-  width: 190px;
-  height: auto;
-}
-
-.header .nav-menu {
-  display: flex;
-}
-
-.header .nav-item {
-  padding: 1.5rem;
-  font-weight: 500;
-}
-
 .header .nav-item a:hover {
   text-decoration: none;
-  padding-bottom: 0px;
+  padding-bottom: 2px;
   border-bottom: 3px solid $sunlife-yellow;
 }
 
 .hamburger {
   display: none;
+}
+
+.nav-header {
+  translate: translateY(200px);
 }
 
 @media screen and (max-width:940px) {
@@ -249,7 +252,7 @@ $web-dark: rgb(10, 44, 55);
   }
 
   .nav-menu {
-      position: fixed;
+      position: sticky;
       left: -100%;
       top: 90px;
       flex-direction: column;
@@ -257,16 +260,12 @@ $web-dark: rgb(10, 44, 55);
       width: 100%;
       height: 90vh;
       z-index: 999;
-      text-align: right;
+      // text-align: center;
       transition: .3s;
   }
 
   .nav-menu.active {
-      left: 20%;
-  }
-
-  .nav-item {
-      margin: 1.5rem 0;
+      left: 0;
   }
 
   .header .navbar img {
@@ -281,9 +280,48 @@ $web-dark: rgb(10, 44, 55);
   border: 2px;
   transform: translateX(50px);
 }
+.welcome-button {
+  margin: auto;
+  cursor: grab;
+  color: black;
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 20px;
+
+  padding: 0.5em 1.5em;
+  border: 0;
+  border-radius: 10px;
+  
+  
+  align-items: center;
+  transform: translateX(88px) translateY(50px); 
+  height: 50px;
+  width: 300px;
+  background-image: var(--gradient);
+  background-size: 400%;
+  background-position: left;
+  // transition: background-position 1s;
+
+  animation: button-animation 3s infinite alternate;
+}
+
+@keyframes button-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.welcome-button:hover,
+.welcome-button:focus {
+  border-radius: 10px;
+  border: 1px solid $sunlife-header-yellow;
+}
 
 .tutorial-whole {
-  height: 900px;
+  // height: 900px;
   background-color: $sunlife-header-yellow;
 }
 
@@ -292,7 +330,7 @@ $web-dark: rgb(10, 44, 55);
   height: 100px;
   width: 100px;
   text-align: left;
-  transform: translateY(-52px) translateX(70px)
+  // transform: translateY(-52px) translateX(70px)
 }
 
 .connector-one-text {
@@ -313,14 +351,15 @@ $web-dark: rgb(10, 44, 55);
   transform: translateX(75vw) translateY(-30px)
 }
 
-.matters {
+.tut {
   font-family: Verdana;
   font-weight: bold;
   background-color: white;
   color:black;
+  height: 900px;
 }
 
-.matter-connector {
+.tut-connector {
   width: 100px;
   height: 100px;
   background-color: black;
@@ -328,14 +367,14 @@ $web-dark: rgb(10, 44, 55);
   transform: translateY(-52px) translateX(70px)
 }
 
-.matter-connector-text {
+.tut-connector-text {
   font: 15px;
   font-family: Verdana;
   text-align: left;
-  transform: translateY(71px) translateX(5px)
+  transform: translateY(61px) translateX(5px)
 }
 
-.matter-placeholder-text {
+.tut-placeholder-text {
   color: black;
   margin: 0 10rem;
 }
@@ -347,6 +386,17 @@ $web-dark: rgb(10, 44, 55);
   font-size: 30px;
 }
 
+.video {
+  width: 300px;
+  height: 200px;
+  z-index: 1000;
+}
+
+.tut-video {
+  width: 550px;
+  height: 360px;
+
+}
 .survey-Text {
   display: flex;
   transform: translateY(100px) 
@@ -362,8 +412,8 @@ $web-dark: rgb(10, 44, 55);
 
 .email-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 
   .email-element {
     padding: 10px;
@@ -400,23 +450,23 @@ $web-dark: rgb(10, 44, 55);
   }
 }
 
-.welcome-page-start {
-  position: sticky;
-  bottom: 0px;
-  z-index: -1;
-  margin: 0 auto;
-  display:flex;
-  justify-content: center;
-  background-color: $yellow-white;
-  color: black;
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 40px;
-  width: 15%;
+// .welcome-page-start {
+//   position: sticky;
+//   bottom: 0px;
+//   z-index: -1;
+//   margin: 0 auto;
+//   display:flex;
+//   justify-content: center;
+//   background-color: $yellow-white;
+//   color: black;
+//   font-family: Verdana;
+//   font-weight: bold;
+//   font-size: 40px;
+//   width: 15%;
 
-  font-style: italic;
-  border: solid 2px $sunlife-header-yellow;
-}
+//   font-style: italic;
+//   border: solid 2px $sunlife-header-yellow;
+// }
 
 .footer {
   height: 200px;
