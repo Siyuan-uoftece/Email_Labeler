@@ -46,7 +46,9 @@ function Label({ numEmails, page, setPage }:
           <p>{"Email " + (index + 1)}</p>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
           <FormGroup className="email-box-labels" inline={true} style={{ position: "relative", top: -0.5 }}>
-            <AnchorButton
+            <button className="label-button">Sensitive</button>
+            <button className="label-button-non">Non-Sensitive</button>
+            {/* <AnchorButton
               icon="annotation"
               text="Sensitive"
               small={true}
@@ -57,7 +59,7 @@ function Label({ numEmails, page, setPage }:
               text="Not Sensitive"
               small={true}
               onClick={handleNotSensitive}
-            />
+            /> */}
           </FormGroup>
         </div>
 
@@ -112,6 +114,8 @@ function Label({ numEmails, page, setPage }:
       <pre>
         <div className="email-grid">{emails.map(mappingFunc)}</div>
       </pre>
+
+      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }

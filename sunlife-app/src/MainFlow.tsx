@@ -46,7 +46,7 @@ function MainFlow() {
         <button className="sunlife-header-quick-start">
           Get to know more about our project --&gt;
         </button>
-        <QuickTutorial/>
+        {/* <QuickTutorial/> */}
         <VideoStep />
         {/* <input type="file" id="file-selector" multiple></input> */}
       </div>

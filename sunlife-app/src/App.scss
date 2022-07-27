@@ -28,7 +28,7 @@ $web-dark: rgb(10, 44, 55);
 
 .sunlife-header {
   background-color: $sunlife-yellow;
-  height: 35px;
+  height: 45px;
   width: 100vw;
   display: flex;
   position: sticky;
@@ -37,11 +37,11 @@ $web-dark: rgb(10, 44, 55);
 
 .sunlife-logo {
   transform: translateX(70px);
-  height: 35px;
+  height: 45px;
 }
 
 .sunlife-header-quick-start {
-  transform: translateX(79.2vw) translateY(-798px);
+  transform: translateX(79.2vw) translateY(-802px); 
   z-index: 1000;
   background-color: $yellow-white;
   border: 0.3px solid black;
@@ -188,7 +188,7 @@ $web-dark: rgb(10, 44, 55);
   z-index: 1;
   transition: .3s ease-in;
   overflow: hidden;
-  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.87);
   border-bottom: 0.2px solid $sunlife-yellow;
 }
 
@@ -273,6 +273,15 @@ $web-dark: rgb(10, 44, 55);
   }
 }
 
+.startSurvey {
+  background-image: var(--gradient);
+  background-size: 400%;
+  background-position: left;
+  // transition: background-position 1s;
+
+  animation: button-animation 3s infinite alternate;
+}
+
 .welcome-login {
   margin: 2px 2px;
   padding: 90px;
@@ -280,6 +289,7 @@ $web-dark: rgb(10, 44, 55);
   border: 2px;
   transform: translateX(50px);
 }
+
 .welcome-button {
   margin: auto;
   cursor: grab;
@@ -320,17 +330,18 @@ $web-dark: rgb(10, 44, 55);
   border: 1px solid $sunlife-header-yellow;
 }
 
-.tutorial-whole {
-  // height: 900px;
-  background-color: $sunlife-header-yellow;
+.tut-vid-section{
+  height: 800px;
+  background-color: rgb(0,0,0);
+  margin: 0.1rem 0.6rem;
 }
 
-.tutorial-connector {
-  background-color: white;
-  height: 100px;
+.tut-connector {
   width: 100px;
-  text-align: left;
-  // transform: translateY(-52px) translateX(70px)
+  height: 100px;
+  background-color: $sunlife-yellow;
+  color: black;
+  transform: translateY(-52px) translateX(70px)
 }
 
 .connector-one-text {
@@ -340,43 +351,85 @@ $web-dark: rgb(10, 44, 55);
   transform: translateY(56px) translateX(10px)
 }
 
-.tutorial-header {
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 80px;
-  color: black;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  transform: translateX(75vw) translateY(-30px)
-}
-
-.tut {
-  font-family: Verdana;
-  font-weight: bold;
-  background-color: white;
-  color:black;
-  height: 900px;
-}
-
-.tut-connector {
-  width: 100px;
-  height: 100px;
-  background-color: black;
+.tut-header {
   color: white;
-  transform: translateY(-52px) translateX(70px)
-}
-
-.tut-connector-text {
-  font: 15px;
+  font-weight: bold;
+  font-size: 40px;
   font-family: Verdana;
-  text-align: left;
-  transform: translateY(61px) translateX(5px)
+  padding: 0rem 8.3rem;
 }
 
-.tut-placeholder-text {
-  color: black;
-  margin: 0 10rem;
+.tut-vid-setup {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0rem 8rem;
+}
+
+.tut-vids {
+  transform: translateY(50px);
+  width: 450px;
+  height: 350px;
+}
+
+.tut-step-title {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0rem 8rem;
+}
+
+.tut-title-1 {
+  transform: translateY(79px) translateX(-54px);
+  font-size: 18px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: $yellow-white;
+}
+.tut-title-2 {
+  transform: translateY(79px) translateX(-100px);
+  font-size: 18px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: $yellow-white;
+}
+.tut-title-3 {
+  transform: translateY(79px) translateX(-85px);
+  font-size: 18px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: $yellow-white;
+}
+
+.tut-step-explain {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0rem 8rem;
+  font-size: 15px;
+  font-weight:100;
+  color: white;
+}
+
+.tut-step-explain-1{
+  transform: translateY(75px) translateX(-10px);
+  font-family: Verdana;
+  width: 440px;
+  height: 350px;
+}
+
+.tut-step-explain-2{
+  transform: translateY(75px) translateX(-10px);
+  font-family: Verdana;
+  width: 430px;
+  height: 350px;
+}
+
+.tut-step-explain-3{
+  transform: translateY(75px) translateX(-10px);
+  font-family: Verdana;
+  width: 430px;
+  height: 350px;
 }
 
 .survey-Block {
@@ -386,17 +439,6 @@ $web-dark: rgb(10, 44, 55);
   font-size: 30px;
 }
 
-.video {
-  width: 300px;
-  height: 200px;
-  z-index: 1000;
-}
-
-.tut-video {
-  width: 550px;
-  height: 360px;
-
-}
 .survey-Text {
   display: flex;
   transform: translateY(100px) 
@@ -418,7 +460,7 @@ $web-dark: rgb(10, 44, 55);
   .email-element {
     padding: 10px;
     margin: 10px;
-    border: 3px solid $sunlife-yellow;
+    border: 1px solid rgb(65, 64, 64);
     border-radius: 15px;
     // height: 500px;
     // width: 850px;
@@ -432,6 +474,65 @@ $web-dark: rgb(10, 44, 55);
   .separator {
     transform: translateY(-14px) ;
   }
+}
+
+.submit-button {
+  cursor: grab;
+  color: rgb(65, 64, 64);
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 20px;
+
+  padding: 0.5em 1.5em;
+  border: 0.1px solid rgb(65, 64, 64);
+  border-radius: 10px;
+  
+  align-items: right;
+  transform: translateX(43vw) translateY(-150px); 
+  height: 50px;
+  width: 300px;
+  background-color: $sunlife-header-yellow;
+}
+
+.label-button {
+  margin: auto;
+  cursor: grab;
+  color: white;
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 10px;
+
+  // padding: 0.5em 1.5em;
+  border: 0.1px solid grey;
+  border-radius: 10px;
+  
+  
+  align-items: center;
+  transform: translateX(110px) translateY(0px); 
+  height: 20px;
+  width: 100px;
+  background-color: rgb(182, 59, 59);
+}
+
+.label-button-non {
+  margin: auto;
+  cursor: grab;
+  color: white;
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 10px;
+  transform: translateY(-20px);
+
+  // padding: 0.5em 1.5em;
+  border: 0.1px solid grey;
+  border-radius: 10px;
+  
+  
+  align-items: center;
+  transform: translateX(120px) translateY(0px); 
+  height: 20px;
+  width: 100px;
+  background-color: rgb(45, 125, 45);
 }
 
 .alert-box {
@@ -449,24 +550,6 @@ $web-dark: rgb(10, 44, 55);
     transform: translateY(-8px)
   }
 }
-
-// .welcome-page-start {
-//   position: sticky;
-//   bottom: 0px;
-//   z-index: -1;
-//   margin: 0 auto;
-//   display:flex;
-//   justify-content: center;
-//   background-color: $yellow-white;
-//   color: black;
-//   font-family: Verdana;
-//   font-weight: bold;
-//   font-size: 40px;
-//   width: 15%;
-
-//   font-style: italic;
-//   border: solid 2px $sunlife-header-yellow;
-// }
 
 .footer {
   height: 200px;
