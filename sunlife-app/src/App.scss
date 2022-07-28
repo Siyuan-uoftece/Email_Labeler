@@ -468,6 +468,7 @@ $web-dark: rgb(10, 44, 55);
   max-height: 35vh;
 }
 
+
 .survey-Block {
   display: flex;
   justify-content: center;
@@ -486,6 +487,31 @@ $web-dark: rgb(10, 44, 55);
   justify-content: center;
   margin: 0 auto;
   transform: translateY(200px)
+}
+
+.survey-button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  transform: translateY(200px);
+  cursor: grab;
+  color: black;
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 20px;
+
+  padding: 0.5em 1.5em;
+  border: 0;
+  border-radius: 10px;
+  
+  
+  align-items: center;
+  height: 50px;
+  width: 300px;
+  background-image: var(--gradient);
+  background-size: 400%;
+  background-position: left;
+  animation: button-animation 3s infinite alternate;
 }
 
 .email-grid {
@@ -515,7 +541,7 @@ $web-dark: rgb(10, 44, 55);
 
 .email-grid-big-block {
   // background-color: white;
-  height: 1200px;
+  height: 100vh;
 }
 
 .submit-button {
@@ -539,15 +565,34 @@ $web-dark: rgb(10, 44, 55);
   z-index: -1;
 }
 
+.submit-button-2 {
+  color: black;
+  font-family:Verdana;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: grab;
+
+  height: 50px;
+  width: 300px;
+  padding: 0.5em 1.5em;
+  border: 0.1px solid rgb(65, 64, 64);
+  border-radius: 10px;
+  cursor: pointer;
+  // position: sticky;
+  text-align: center;
+  transform: translateX(43vw); 
+  background-color: $sunlife-header-yellow;
+}
+
 .label-button {
   margin: auto;
   cursor: grab;
-  color: white;
+  color: black;
   font-family:Verdana;
   font-weight: bold;
   font-size: 11px;
 
-  border: 0.1px solid grey;
+  border: 1px solid rgb(182, 59, 59);
   border-radius: 10px;
   
   
@@ -555,20 +600,20 @@ $web-dark: rgb(10, 44, 55);
   transform: translateX(110px) translateY(0px); 
   height: 25px;
   width: 100px;
-  background-color: rgb(182, 59, 59);
+  background-color: white;
 }
 
 .label-button-non {
   margin: auto;
   cursor: grab;
-  color: white;
+  color: black;
   font-family:Verdana;
   font-weight: bold;
   font-size: 11px;
   transform: translateY(-20px);
 
   // padding: 0.5em 1.5em;
-  border: 0.1px solid grey;
+  border: 1px solid rgb(45, 125, 45);
   border-radius: 10px;
   
   
@@ -576,30 +621,52 @@ $web-dark: rgb(10, 44, 55);
   transform: translateX(120px) translateY(0px); 
   height: 25px;
   width: 100px;
-  background-color: rgb(45, 125, 45);
+  background-color: white;
 }
 
+//rgb(45, 125, 45)
 .alert-box {
-  background-color: black;
+  background-color: white;
 
   .alert-header {
-    color: white;
+    color: black;
     font-size: 20px;
     font-weight: bold;
   }
 
   .alert-sub {
-    color: white;
+    color: black;
     font-size: 16px;
     transform: translateY(-8px)
   }
 }
 
+.submit-box {
+  background-color: white;
+
+  .submit-header {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .submit-sub {
+    color: black;
+    font-size: 16px;
+    transform: translateY(-8px)
+  }
+}
 .footer {
-  height: 200px;
+  height: 50px;
   background-color: rgb(9, 8, 8);
 }
 
+.footer-note {
+  color: $sunlife-yellow;
+  font-size: 16px;
+  transform: translateY(24px);
+  text-align: center;
+}
 
 
 

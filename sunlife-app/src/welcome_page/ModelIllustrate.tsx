@@ -21,9 +21,9 @@ function ModelIllustrate() {
             </div>
 
             <div className="photos">
-                <div 
-                data-aos="fade-up" 
-                className="pic"><img src="https://tenstorrent.com/app/uploads/2021/04/Group-66.png" /></div>
+                <div data-aos="fade-up" className="pic">
+                    <img src="https://tenstorrent.com/app/uploads/2021/04/Group-66.png" />
+                </div>
             </div>
 
         </div>

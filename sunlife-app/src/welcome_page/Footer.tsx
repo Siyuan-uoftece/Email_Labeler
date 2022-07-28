@@ -3,7 +3,7 @@ import React from "react"
 function Footer() {
     return(
         <div className="footer">
-            <h5>footer here</h5>
+            <p className="footer-note">Powered by Sunlife | All Rights Reserved</p>
         </div>
     )
 }

@@ -11,8 +11,14 @@ function Label({ numEmails, page, setPage }:
     page: number,
     setPage: (page: number) => void,
   }) {
+
   const [alertExitPage, setAlertExitPage] = useState(false);
   const [emails, setEmails] = useState([]);
+  const [submit, setSubmit] = useState(false);
+
+  function handleSubmit() {
+    setSubmit(!submit);
+  }
 
   // for (let i = 0; i < numEmails; i++) {
   //   emails.push(emailData[i]);
@@ -25,14 +31,6 @@ function Label({ numEmails, page, setPage }:
   }, [numEmails]);
 
   const mappingFunc = (email: any, index: number) => {
-    // const newEmail: any = {};
-    // newEmail["mid"] = email["mid"];
-    // newEmail["sender"] = email["sender"];
-    // newEmail["rcpt"] = email["rcpt"];
-    // newEmail["subject"] = email["subject"];
-    // newEmail["files"] = email["files"];
-
-
     function handleIsSensitive(index: any) {
       console.log("is sensitive");
     }
@@ -47,18 +45,21 @@ function Label({ numEmails, page, setPage }:
           <p>{"Email " + (index + 1)}</p>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
           <FormGroup className="email-box-labels" inline={true} style={{ position: "relative", top: -0.5 }}>
-            <button className="label-button">Sensitive</button>
-            <button className="label-button-non">Non-Sensitive</button>
+            <button 
+            className={"label-button"} 
+            id={"label-button-" + (index + 1)}
+            onClick={() => {
+              document.getElementById("label-button-" + (index + 1))!.style.backgroundColor="rgb(182, 59, 59)";
+              document.getElementById("label-button-" + (index + 1))!.style.color="rgb(255,255,255)";
+            }}>
+              Sensitive
+            </button>
+            <button id={"label-button-non-" + (index + 1)} className={"label-button-non"}>Non-Sensitive</button>
           </FormGroup>
         </div>
 
         <hr className="separator" />
         <p>{JSON.stringify(email, null, 2)}</p>
-        {/* <p>MailID: {JSON.stringify(newEmail.mid, null, 2)}</p>
-        <p>Sender: {JSON.stringify(newEmail.sender, null, 2)}</p>
-        <p>Recipient: {JSON.stringify(newEmail.rcpt, null, 2)}</p>
-        <p>Subject: {JSON.stringify(newEmail.subject, null, 2)}</p>
-        <p>Files: {JSON.stringify(newEmail.files, null, 2)}</p> */}
       </div>
     );
   };
@@ -77,7 +78,7 @@ function Label({ numEmails, page, setPage }:
 
   return (
     <div className="email-grid-big-block">
-      <Header />
+      {/* <Header /> */}
       <Button
         className="something"
         icon="arrow-left"
@@ -104,6 +105,31 @@ function Label({ numEmails, page, setPage }:
       <pre>
         <div className="email-grid">{emails.map(mappingFunc)}</div>
       </pre>
+      <button 
+          className="submit-button-2"
+          onClick={() => {
+            console.log("Setting submit true");
+            setSubmit(true);
+          }}>
+          SUBMIT
+        </button>
+        <Alert
+          className="submit-box"
+          isOpen={submit}
+          icon="clean"
+          intent="success"
+          confirmButtonText="Submit"
+          cancelButtonText="Cancel"
+          onConfirm={handleSubmit}
+          onCancel={()=>{
+            setSubmit(false);
+          }}
+        >
+          <h2 className="submit-header">Are you sure you want to submit?</h2>
+          <p className="submit-sub">You can't undo this submit.</p>
+          {/* <h2 className="submit-header">You have successfully submit the labelling.</h2>
+          <p className="submit-sub">Thank you for your participation.</p> */}
+        </Alert>
     </div>
   );
 }

@@ -24,16 +24,6 @@ function Welcome({ page, setPage }:
         of our Machine&nbsp; &nbsp;Learning Model to identify Data Breach.&nbsp; </mark>
       </p>
       <button className="welcome-button" onClick={handlePage2}>GET STARTED</button>
-      {/* <p className="welcome-learn-ml">
-        <a className="welcome-ml-style" href="https://en.wikipedia.org/wiki/Active_learning">
-          Learn more about our MACHINE LEARNING MODEL --&gt;
-        </a>
-      </p> */}
-      {/* <button className="welcome-learn-data">
-        <a className="welcome-date-style" href="https://en.wikipedia.org/wiki/Data_breach">
-          Learn more about DANGER of DATA BREACH --&gt;
-        </a>
-      </button> */}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Alert } from "@blueprintjs/core";
 import Welcome from "./welcome_page/Welcome";
 import Label from "./label_page/Label";
 import LearnMore from "./welcome_page/LearnMore"
@@ -18,6 +19,11 @@ function MainFlow() {
   //page3: general email display page
   const [page, setPage] = useState(Page.Welcome);
   const [numEmails, setNumEmails] = useState(1);
+  const [submit, setSubmit] = useState(false);
+
+  function handleSubmit() {
+    setSubmit(!submit);
+  }
 
   function handlePage2() {
     setPage(Page.Survey);
@@ -51,7 +57,6 @@ function MainFlow() {
     return (
       <div className="label">
         <Label numEmails={numEmails} page={page} setPage={setPage} />
-        <button className="submit-button">SUBMIT</button>
       </div>
     )
   }
