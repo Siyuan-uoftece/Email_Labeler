@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useEffect } from "react";
 import { AnchorButton, Button, FormGroup, Alert } from "@blueprintjs/core";
 import emailData from "./emailData";
 import { Page } from "../common";
+import {Header} from "../common";
 
 
 function Label({ numEmails, page, setPage }:
@@ -48,18 +49,6 @@ function Label({ numEmails, page, setPage }:
           <FormGroup className="email-box-labels" inline={true} style={{ position: "relative", top: -0.5 }}>
             <button className="label-button">Sensitive</button>
             <button className="label-button-non">Non-Sensitive</button>
-            {/* <AnchorButton
-              icon="annotation"
-              text="Sensitive"
-              small={true}
-              onClick={handleIsSensitive}
-            />
-            <AnchorButton
-              icon="annotation"
-              text="Not Sensitive"
-              small={true}
-              onClick={handleNotSensitive}
-            /> */}
           </FormGroup>
         </div>
 
@@ -87,7 +76,8 @@ function Label({ numEmails, page, setPage }:
   }, []);
 
   return (
-    <div>
+    <div className="email-grid-big-block">
+      <Header />
       <Button
         className="something"
         icon="arrow-left"
@@ -114,8 +104,6 @@ function Label({ numEmails, page, setPage }:
       <pre>
         <div className="email-grid">{emails.map(mappingFunc)}</div>
       </pre>
-
-      <button className="submit-button">SUBMIT</button>
     </div>
   );
 }

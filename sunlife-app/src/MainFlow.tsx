@@ -9,6 +9,8 @@ import { Page } from "./common"
 import {Header} from "./common"
 import Navbar from "./welcome_page/Navbar"
 import VideoStep from "./welcome_page/VideoStep"
+import ModelIllustrate from "./welcome_page/ModelIllustrate";
+import Footer from "./welcome_page/Footer";
 
 function MainFlow() {
   //page1: welcome page
@@ -20,22 +22,6 @@ function MainFlow() {
   function handlePage2() {
     setPage(Page.Survey);
   }
-  // useEffect(() => {
-  //   if (page !== Page.Welcome) return;
-  //   const fileSelector = document.getElementById('file-selector');
-  //   fileSelector && fileSelector.addEventListener("change", (event: any) => {
-  //     const reader = new FileReader();
-  //     const fileList = event.target.files;
-
-  //     reader.addEventListener('load', function(e: any) {
-  //       console.log(e.target.result);
-  //     })
-  //     reader.readAsBinaryString(fileList[0])
-  //   });
-  // })
-  // function handlePage3() {
-  //     setPage(Page.LabelGeneral);
-  // }
 
   if (page === Page.Welcome) {
     return (
@@ -46,8 +32,9 @@ function MainFlow() {
         <button className="sunlife-header-quick-start">
           Get to know more about our project --&gt;
         </button>
-        {/* <QuickTutorial/> */}
         <VideoStep />
+        <ModelIllustrate />
+        <Footer />
         {/* <input type="file" id="file-selector" multiple></input> */}
       </div>
     );
@@ -61,7 +48,12 @@ function MainFlow() {
       />
     );
   } else {
-    return <Label numEmails={numEmails} page={page} setPage={setPage} />;
+    return (
+      <div className="label">
+        <Label numEmails={numEmails} page={page} setPage={setPage} />
+        <button className="submit-button">SUBMIT</button>
+      </div>
+    )
   }
 }
 
